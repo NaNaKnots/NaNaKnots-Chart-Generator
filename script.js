@@ -129,6 +129,7 @@ function generateCrown(startingSitches = 96) {
   const finishingStitches = 8;
 
   if (startinStitches !== 96) {
+    throw new Error(
     "This crown pattern currently supports 96 stitches."
     );
   }
