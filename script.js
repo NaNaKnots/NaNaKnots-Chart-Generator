@@ -123,7 +123,7 @@ $("export").onclick = downloadJson;
 $("reset").onclick = () => { motif = []; render(); };
 legend(); palette(); render();
 
-function generateCrown(startingSitches = 96) {
+function generateCrown(startingStitches = 96) {
   const sections = 4;
   const decreasePerSection = 2;
   const finishingStitches = 8;
