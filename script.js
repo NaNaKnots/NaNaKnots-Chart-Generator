@@ -128,7 +128,7 @@ function generateCrown(startingSitches = 96) {
   const decreasePerSection = 2;
   const finishingStitches = 8;
 
-  if (startinStitches !== 96) {
+  if (startingStitches !== 96) {
     throw new Error(
     "This crown pattern currently supports 96 stitches."
     );
@@ -147,7 +147,7 @@ for (let round = 1; round <= 21; round++) {
   } else if (round % 2 === 1) {
     decreases = sections * decreasePerSection;
     instruction =
-      "Work slipped-stitch crown patern with K2tog ans SKPO";
+      "Work slipped-stitch crown patern with K2tog and SKPO";
   } else {
     instruction = "Knit all stitches";
   }
