@@ -170,4 +170,4 @@ for (let round = 1; round <= 21; round++) {
   return crownRounds;
 }
 
-constole.table(generateCrown()); // temporary code
+console.table(generateCrown()); // temporary code
