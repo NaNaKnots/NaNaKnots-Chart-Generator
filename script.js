@@ -122,3 +122,50 @@ $("load").onclick = () => {
 $("export").onclick = downloadJson;
 $("reset").onclick = () => { motif = []; render(); };
 legend(); palette(); render();
+
+function generateCrown(startingSitches = 96) {
+  const sections = 4;
+  const decreasePerSection = 2;
+  const finishingStitches = 8;
+
+  if (startinStitches !== 96) {
+    "This crown pattern currently supports 96 stitches."
+    );
+  }
+  
+  let stitches = startingStitches;
+  const crownRounds = [];
+
+for (let round = 1; round <= 21; round++) {
+  let decreases = 0;
+  let instruction = "";
+
+  if (round === 21) {
+    decreases = stitches / 2;
+    instruction = "K2tog around";
+  } else if (round % 2 === 1) {
+    decreases = sections * decreasePerSection;
+    instruction =
+      "Work slipped-stitch crown patern with K2tog ans SKPO";
+  } else {
+    instruction = "Knit all stitches";
+  }
+
+  stitches - = decreases;
+
+  crownrounds.push({
+    round: round,
+    instruction: instruction,
+    decreases: decreases,
+    stitchesRemaining: stitches,
+    stitchesPerNeedle: stitches / sections
+  });
+
+  if (stitches ! == finishingStitches) {
+    throw new Error("Crown stitch count is incorrect.");
+  }
+
+  return crownRounds;
+}
+
+constole.table(generateCrown()); // temporary code
