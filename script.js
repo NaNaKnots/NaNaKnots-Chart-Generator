@@ -152,7 +152,7 @@ for (let round = 1; round <= 21; round++) {
     instruction = "Knit all stitches";
   }
 
-  stitches - = decreases;
+  stitches -= decreases;
 
   crownrounds.push({
     round: round,
