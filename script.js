@@ -154,7 +154,7 @@ for (let round = 1; round <= 21; round++) {
 
   stitches -= decreases;
 
-  crownrounds.push({
+  crownRounds.push({
     round: round,
     instruction: instruction,
     decreases: decreases,
