@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NaNaKnots Chart Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header><p class="eyebrow">NaNaKnots · Pattern Studio</p><h1>Knitting Chart Generator</h1><p>Design a stitch motif and place it on your beanie body.</p></header>
+    <section class="panel controls" aria-label="Pattern settings">
+      <h2>1. Beanie settings</h2>
+      <div class="fields">
+        <label>Body stitches <input id="stitches" type="number" min="1" max="240" value="96"></label>
+        <label>Body rounds <input id="rounds" type="number" min="1" max="120" value="24"></label>
+        <label>Motif width <input id="motifWidth" type="number" min="1" max="24" value="8"></label>
+        <label>Motif height <input id="motifHeight" type="number" min="1" max="24" value="4"></label>
+        <label>Placement <select id="placement"><option value="all">All-over body</option><option value="band">Decorative band</option></select></label>
+        <label>Band starts at round <input id="bandStart" type="number" min="1" value="7"></label>
+        <label>Band ends at round <input id="bandEnd" type="number" min="1" value="16"></label>
+      </div>
+      <p class="hint">Rounds count upward from the bottom of the body. Crown shaping is not included yet.</p>
+    </section>
+    <section class="panel" aria-label="Motif editor">
+      <h2>2. Draw your stitch motif</h2>
+      <div id="palette" class="palette" role="group" aria-label="Choose stitch symbol"></div>
+      <p class="hint">Choose a stitch, then click cells to draw. Motif round 1 is at the bottom.</p>
+      <div class="scroll"><div id="motifChart"></div></div>
+    </section>
+    <section class="panel" aria-label="Beanie chart preview">
+      <h2>3. Beanie body preview</h2>
+      <p id="status" aria-live="polite"></p>
+      <div class="scroll"><div id="bodyChart"></div></div>
+      <div class="actions"><button id="save">Save in browser</button><button id="load">Load saved design</button><button id="export">Export JSON</button><button id="reset" class="secondary">Reset motif</button></div>
+      <p class="hint">Chart convention: read each round from right to left, starting at the bottom. Each symbol represents a stitch operation; decreases and yarn overs will require stitch-count validation in a later version.</p>
+    </section>
+    <section class="panel"><h2>Symbol legend</h2><div id="legend"></div></section>
+  </main>
+</body>
+</html>
