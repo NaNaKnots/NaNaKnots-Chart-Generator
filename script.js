@@ -163,7 +163,7 @@ for (let round = 1; round <= 21; round++) {
     });
   }
   
-  if (stitches ! == finishingStitches) {
+  if (stitches !== finishingStitches) {
     throw new Error("Crown stitch count is incorrect.");
   }
 
