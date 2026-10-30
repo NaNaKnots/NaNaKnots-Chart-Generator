@@ -160,8 +160,9 @@ for (let round = 1; round <= 21; round++) {
     decreases: decreases,
     stitchesRemaining: stitches,
     stitchesPerNeedle: stitches / sections
-  });
-
+    });
+  }
+  
   if (stitches ! == finishingStitches) {
     throw new Error("Crown stitch count is incorrect.");
   }
